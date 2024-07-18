@@ -1,0 +1,133 @@
+@import "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css";
+
+.logo{
+  width:3em;
+  height: 3em;
+  filter: saturate(14) brightness(11.5);
+}
+
+
+.slider1{
+  height: 60em;
+}
+
+.slider2{
+  height: 60em;
+}
+
+.slider3{
+  height: 60em;
+
+}
+
+.carousel-custom-button-next{
+background-image: url(https://cdn0.iconfinder.com/data/icons/user-interface-solid-23/24/Arrow_Right_Square-512.png);
+display: inline-block;
+width: 3rem;
+height: 3rem;
+background-repeat: no-repeat;
+background-position: 50%;
+background-size: 100% 100%;
+border-color: aqua;
+border: 0em;
+border-style: double;
+filter: saturate(14) brightness(11.5);
+
+}
+
+
+.carousel-custom-button-prev{
+background-image: url(https://cdn0.iconfinder.com/data/icons/user-interface-solid-23/24/Arrow_Left_Square-512.png);
+display: inline-block;
+width: 3rem;
+height: 3rem;
+background-repeat: no-repeat;
+background-position: 50%;
+background-size: 100% 100%;
+border-color: aqua;
+border: 0em;
+border-style: double;
+filter: saturate(14) brightness(11.5);
+
+}
+
+.menu{
+  text-decoration: none;
+  margin-top: 2em;
+}
+
+.clients, .gallery, .sponsors, .events{
+  position: relative;
+  margin-left:40%;
+  padding:5%;
+}
+
+.radio{
+  position: static;
+  margin-left: 3em;
+  top: auto;
+  margin-top: 0.8em !important;
+}
+.ModalCustom{
+  background: black;
+  color: #24bbbb;
+}
+
+.ModalHeaderCustom{
+  background: #25272b;
+  color: #24bbbb;
+}
+
+.modal-body-custom{
+  background: #25272b;
+  color: #24bbbb;
+}
+
+.text-bg-grey{
+  background: #25272b;
+  color: #24bbbb;
+  border: 0.5em;
+}
+// Generate series of `.navbar-expand-*` responsive classes for configuring
+// where your navbar collapses.
+.navbar-expand {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    // stylelint-disable-next-line scss/selector-no-union-class-name
+    &#{$infix} {
+      @include media-breakpoint-up($next) {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+
+        .navbar-nav {
+          flex-direction: row;
+
+          .dropdown-menu {
+            position: absolute;
+          }
+
+          .nav-link {
+            padding-right: $navbar-nav-link-padding-x;
+            padding-left: $navbar-nav-link-padding-x;
+          }
+        }
+
+        .navbar-nav-scroll {
+          overflow: visible;
+        }
+
+        .navbar-collapse {
+          display: flex !important; // stylelint-disable-line declaration-no-important
+          flex-basis: auto;
+        }
+
+        .navbar-toggler {
+          display: none;
+        }
+      }
+    }
+  }
+}
